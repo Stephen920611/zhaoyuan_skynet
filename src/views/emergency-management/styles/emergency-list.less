@@ -1,0 +1,170 @@
+//树样式
+/deep/ .el-aside {
+    background-color: #ffffff;
+    line-height: 1;
+    color: #333;
+    text-align: left;
+    padding: 10px 10px;
+    /*border: 1px solid #ebebeb;*/
+}
+
+.search-tree {
+    .search-tree-input {
+        margin-bottom: 15px;
+    }
+    /deep/ .el-tree-node__label {
+        font-size: 14px
+    }
+
+}
+
+//列表样式
+.list-main {
+    /*border: 1px solid #ebebeb;*/
+    padding: 0;
+    margin-left: 10px;
+}
+
+//内容样式
+.el-card {
+    border: 0;
+    /deep/ .el-table th {
+        background-color: #308FE4;
+        color: #fff;
+    }
+}
+
+.table-card {
+    height: calc(100% - 58px);
+    /deep/ .el-card__body {
+        height: 100%;
+    }
+}
+
+.el-card.is-always-shadow {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.05);
+}
+
+//搜索条件样式
+.form-inline-search {
+    .form-inline-search-item {
+        width: 100%;
+        /deep/ .el-form-item__content {
+            width: calc(100% - 120px);
+        }
+        /deep/.el-select{
+            width: 100%;
+        }
+    }
+}
+
+.filter-container {
+    padding-bottom: 0;
+}
+
+.el-container {
+    height: calc(100vh - 470px);
+}
+
+.el-aside, .el-main {
+    height: 100%;
+}
+
+//分页
+.pagination-container {
+    margin-top: 20px;
+}
+
+//下部地图
+.emergency-map-container {
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    .emergency-map {
+        width: 500px;
+        /*background-color: gray;*/
+        padding: 0 15px 10px 0;
+    }
+    .emergency-info {
+        width: calc(100% - 500px);
+        padding: 0 15px 15px 15px;
+        .el-row {
+            line-height: 36px;
+            font-size: 14px;
+            font-weight: 700
+        }
+    }
+    .map {
+        height: 100%;
+        position: relative;
+    }
+    .map-marker {
+        position: absolute;
+        z-index: 99;
+        color: #333;
+        background-color: #fff;
+        padding: 5px;
+        line-height: 10px;
+        top: 10px;
+        left: 10px;
+        border-radius: 10px;
+        font-size: 14px;
+        cursor: crosshair;
+    }
+    /deep/.tool_point{
+        margin-left: 15px !important;
+    }
+}
+
+//弹出框样式
+/deep/ .el-dialog__body {
+    padding: 10px 40px 20px 20px !important;
+}
+
+/deep/ .el-dialog__header {
+    background-color: #304156;
+    color: #fff;
+    padding: 13px 20px;
+}
+
+/deep/ .el-dialog__header .el-dialog__headerbtn {
+    top: 16px
+}
+/*地图标注弹窗*/
+.marker-dialog{
+    /deep/ .el-dialog{
+        height: 700px;
+        .el-dialog__body{
+            height: calc(100% - 90px);
+            position: relative;
+        }
+        .lt-btn-wrapper{
+            position: absolute;
+            top: 20px;
+            left: 30px;
+        }
+        /deep/ .el-divider--horizontal{
+            margin: 10px 0;
+        }
+    }
+}
+
+.none-marker-notice{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #ed5565;
+    color: #fff;
+    border-radius: 3px;
+    width: 70px;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+}

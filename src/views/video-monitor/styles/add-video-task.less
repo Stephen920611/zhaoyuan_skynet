@@ -1,0 +1,75 @@
+.add-task-wrapper{
+  .el-row{
+    position: relative;
+    .el-col-9{
+      height: calc(~"100% - 75px") !important;
+      overflow-y: auto;
+    }
+  }
+  .image-container{
+    position:relative;
+  }
+  .image-wrap{
+    width: 100%;
+    height:500px;
+    margin-bottom: 10px;
+    img{
+      width:100%;
+      height:100%;
+    }
+  }
+  .image-wrap-center{
+    display:flex;
+    justify-content:center;
+    img{
+      width:auto;
+      height:100%;
+      max-width:100%;
+    }
+  }
+  .canvas-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+  }
+  .el-form{
+    .el-form-item{
+      margin-bottom: 16px;
+    }
+    .el-input{
+      width:90%;
+    }
+    .el-select{
+      width:90%;
+    }
+  }
+  .el-form{
+    .el-form-item{
+      margin-bottom: 16px;
+    }
+    .el-input{
+      width:90%;
+    }
+    .el-select{
+      width:100%;
+    }
+  }
+  .switch-wrapper{
+    .operate-item{
+      padding: 8px 15px;
+      margin: 0 5px 5px 0;
+    }
+  }
+  .btn-group{
+    position:absolute;
+    bottom:0;
+  }
+}
+.el-select-dropdown{
+  z-index: 20050 !important;
+}
+.el-date-picker{
+  z-index: 20050 !important;
+}

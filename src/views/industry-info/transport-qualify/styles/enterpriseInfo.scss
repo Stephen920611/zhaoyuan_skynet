@@ -1,0 +1,111 @@
+.app-container{
+    background-color:#FCFCFC;
+    min-height: calc(100vh - 144px);
+}
+.aside-wrap{
+    background-color: #ffffff;
+    min-height: calc(100vh - 170px);
+    float: left;
+    padding: 13px 20px;
+    /deep/ .el-divider--horizontal {
+        display: block;
+        height: 1px;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+.right-panel{
+    background-color: #ffffff;
+    width: 81%;
+    min-height: calc(100vh - 170px);
+    margin-left: 1%;
+    float: left;
+    .filter-container {
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 10px 28px;
+    }
+    .table-info{
+        width: 96%;
+        height: 570px;
+        max-height: 630px;
+        margin-left: 2%;
+    }
+}
+/deep/ .el-table th {
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #308FE4;
+    /* background-color: white; */
+    color: #fff;
+}
+/deep/ .el-dialog__header {
+    background-color: #314055!important;
+    padding: 10px 20px;
+}
+.title{
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+}
+.el-divider--horizontal {
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 13px 0;
+}
+.pagination {
+    /deep/ .el-pagination {
+        display: flex;
+        justify-content: center;
+    }
+}
+.btns {
+    display: flex;
+    justify-content: flex-end;
+
+    /* 大屏幕 ：大于等于1200px*/
+    @media (min-width: 1200px) {
+
+    }
+
+    /*默认*/
+    @media screen and (min-width: 980px) and (max-width: 1199px) {
+
+    }
+
+    /* 平板电脑和小屏电脑之间的分辨率 */
+    @media screen and (min-width: 768px) and (max-width: 979px) {
+
+    }
+    button {
+        /*width: 100px;*/
+    }
+}
+.el-dialog__body {
+    padding: 30px 35px;
+}
+.grid-content{
+    height: 35px;
+    line-height: 35px;
+    padding-left: 5px;
+    float: right;
+}
+/deep/ .iconfont {
+    font-size: 20px!important;
+    cursor: pointer;
+}
+.row-margin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+.tree-content{
+    height: calc(100% - 52px);
+    position: relative;
+    margin-top: 10px;
+}

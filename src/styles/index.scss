@@ -1,0 +1,634 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+//@import './sidebar.scss';//侧边栏菜单
+@import './head-navbar.scss';
+//顶部菜单栏
+@import './btn.scss';
+
+body {
+    height: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+    font-weight: 700;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#app {
+    height: 100%;
+    overflow: hidden;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.padding-content {
+    padding: 4px 0;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+div:focus {
+    outline: none;
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+.pr-5 {
+    padding-right: 5px;
+}
+
+.pl-5 {
+    padding-left: 5px;
+}
+
+.block {
+    display: block;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.inlineBlock {
+    display: block;
+}
+
+.clearfix {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+}
+
+aside {
+    background: #eef1f6;
+    padding: 8px 24px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    display: block;
+    line-height: 32px;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    color: #2c3e50;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    a {
+        color: #337ab7;
+        cursor: pointer;
+
+        &:hover {
+            color: rgb(32, 160, 255);
+        }
+    }
+}
+
+//main-container全局样式
+.app-container {
+    padding: 20px;
+}
+
+.components-container {
+    margin: 30px 50px;
+    position: relative;
+}
+
+.pagination-container {
+    margin-top: 30px;
+}
+
+.text-center {
+    text-align: center
+}
+
+.sub-navbar {
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    width: 100%;
+    text-align: right;
+    padding-right: 20px;
+    transition: 600ms ease position;
+    background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+    .subtitle {
+        font-size: 20px;
+        color: #fff;
+    }
+
+    &.draft {
+        background: #d0d0d0;
+    }
+
+    &.deleted {
+        background: #d0d0d0;
+    }
+}
+
+.link-type,
+.link-type:focus {
+    color: #337ab7;
+    cursor: pointer;
+
+    &:hover {
+        color: rgb(32, 160, 255);
+    }
+}
+
+.filter-container {
+    padding-bottom: 10px;
+
+    .filter-item {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 10px;
+    }
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+    line-height: 16px;
+}
+
+.multiselect--active {
+    z-index: 1000 !important;
+}
+
+/* 浮动 */
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear {
+    clear: both
+}
+
+/* margin */
+.margin-t-5 {
+    margin-top: 5px;
+}
+
+.margin-t-10 {
+    margin-top: 10px;
+}
+
+.margin-t-15 {
+    margin-top: 15px;
+}
+
+.margin-t-20 {
+    margin-top: 20px;
+}
+
+.margin-t-30 {
+    margin-top: 30px;
+}
+
+.margin-t-40 {
+    margin-top: 40px;
+}
+
+.margin-t-60 {
+    margin-top: 60px;
+}
+
+.margin-t-80 {
+    margin-top: 80px;
+}
+
+.margin-l-0 {
+    margin-left: 0!important;
+}
+
+.margin-l-5 {
+    margin-left: 5px;
+}
+
+.margin-l-10 {
+    margin-left: 10px;
+}
+
+.margin-l-20 {
+    margin-left: 20px;
+}
+
+.margin-l-30 {
+    margin-left: 30px;
+}
+
+.margin-r-5 {
+    margin-right: 5px;
+}
+
+.margin-r-10 {
+    margin-right: 10px;
+}
+
+.margin-r-15 {
+    margin-right: 15px;
+}
+
+.margin-r-20 {
+    margin-right: 20px;
+}
+
+.margin-r-30 {
+    margin-right: 30px;
+}
+
+.margin-d-5 {
+    margin-bottom: 5px;
+}
+
+.margin-d-10 {
+    margin-bottom: 10px;
+}
+
+.margin-d-20 {
+    margin-bottom: 20px;
+}
+
+.margin-d-30 {
+    margin-bottom: 30px;
+}
+
+.margin-d-40 {
+    margin-bottom: 40px;
+}
+
+.margin-td-5 {
+    margin: 5px 0;
+}
+
+.margin-td-10 {
+    margin: 10px 0;
+}
+
+.margin-td-20 {
+    margin: 20px 0;
+}
+
+.margin-td-30 {
+    margin: 30px 0;
+}
+
+.margin-td-40 {
+    margin: 40px 0;
+}
+
+.margin-20 {
+    margin: 20px;
+}
+
+.margin-40 {
+    margin: 40px;
+}
+
+/* padding */
+.padding-t-5 {
+    padding-top: 5px;
+}
+
+.padding-t-10 {
+    padding-top: 10px;
+}
+
+.padding-t-20 {
+    padding-top: 20px;
+}
+
+.padding-t-30 {
+    padding-top: 30px;
+}
+
+.padding-lr-5 {
+    padding: 0 5px;
+}
+
+.padding-lr-10 {
+    padding: 0 10px;
+}
+
+.padding-lr-20 {
+    padding: 0 20px;
+}
+
+.padding-td-10 {
+    padding: 10px 0;
+}
+
+.padding-td-20 {
+    padding: 20px 0;
+}
+
+.padding-td-30 {
+    padding: 30px 0;
+}
+
+.padding-td-40 {
+    padding: 40px 0;
+}
+
+.padding-td-60 {
+    padding: 60px 0;
+}
+
+.padding-0 {
+    padding: 0px !important;
+}
+
+.padding-5 {
+    padding: 5px;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.padding-20 {
+    padding: 20px;
+}
+
+/* font */
+.font-bold {
+    font-weight: bold
+}
+
+.font-size-10 {
+    font-size: 10px
+}
+
+.font-size-12 {
+    font-size: 12px
+}
+
+.font-size-13 {
+    font-size: 13px
+}
+
+.font-size-14 {
+    font-size: 14px
+}
+
+.font-size-15 {
+    font-size: 15px
+}
+
+.font-size-16 {
+    font-size: 16px
+}
+
+.font-size-18 {
+    font-size: 18px
+}
+
+.font-size-20 {
+    font-size: 20px
+}
+
+.font-size-22 {
+    font-size: 22px
+}
+
+.font-size-25 {
+    font-size: 25px
+}
+
+.font-size-30 {
+    font-size: 30px
+}
+
+.font-size-32 {
+    font-size: 32px
+}
+
+.font-yahei {
+    font-family: '微软雅黑'
+}
+
+/* text */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-line-del {
+    text-decoration: line-through
+}
+
+/* 颜色 */
+.color-black {
+    color: #000000
+}
+
+.color-blue {
+    color: #0099FF
+}
+
+.color-green {
+    color: #009900
+}
+
+.color-pink {
+    color: #FF5F77;
+}
+
+.color-red {
+    color: red;
+}
+
+.color-intro {
+    color: #B0B0B0;
+}
+
+.color-gray {
+    color: #DEDEDE;
+}
+
+.color-fff {
+    color: #FFFFFF;
+}
+
+.color-yellow {
+    color: #FFFF00;
+}
+
+.color-orange {
+    color: #FF6600;
+}
+
+/* 高度 */
+.height-30 {
+    height: 30px;
+}
+
+.height-40 {
+    height: 40px;
+}
+
+.height-300 {
+    height: 300px !important;
+}
+
+.height-400 {
+    height: 400px !important;
+}
+
+.height-500 {
+    height: 500px !important;
+}
+
+.height-650 {
+    height: 650px !important;
+}
+
+/* 宽度 */
+.width-60 {
+    width: 60px;
+}
+
+/* 边框 */
+.clear-border {
+    border: none !important;
+}
+
+/* 文本换行 */
+.text-wrap {
+    word-wrap: break-word;
+}
+
+.el-radio__input.is-disabled.is-checked .el-radio__inner {
+    background-color: #409eff;
+    border-color: #409eff;
+}
+
+.el-radio__input.is-disabled.is-checked .el-radio__inner::after {
+    transform: translate(-50%, -50%) scale(1);
+    background-color: #fff;
+}
+/* 文本行 */
+.ellipsis-l1 {
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis
+}
+.ellipsis-l2 {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical
+}
+.ellipsis-l3 {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical
+}
+.hairline {
+    border-top: 1px solid #DEDEDE;
+}
+
+//图片预览关闭按钮
+.el-image-viewer__close {
+    color: #fff !important;
+    top: 60px;
+    right: 170px
+}
+
+/*dialog标题样式修改*/
+.el-dialog__header {
+    background-color: #314055;
+    //background-color: #1890ff;
+    padding: 10px 20px;
+    .el-dialog__title {
+        color: #fff;
+        font-size: 16px;
+    }
+    .el-dialog__headerbtn{
+        top:15px;
+        .el-dialog__close {
+            color: #fff;
+
+        }
+    }
+}
+
+/* 暂无数据的样式 */
+.no-data {
+    //height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 60px;
+    color: #909399;
+}
+
+//树、列表背景色
+.all-background{
+    background: #fff;
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, .05);
+    border-color: rgba(0, 0, 0, .05);
+}
+//侧边栏容器与主要区域等高
+aside{
+    margin-bottom: 0;
+}
+
+.text-class{
+    /deep/.el-radio__inner::after{
+        left: 65% !important;
+        top: 65% !important;
+    }
+}

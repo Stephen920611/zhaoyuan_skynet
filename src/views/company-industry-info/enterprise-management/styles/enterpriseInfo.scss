@@ -1,0 +1,111 @@
+.app-container{
+    background-color:#FCFCFC;
+    min-height: calc(100vh - 110px);
+}
+.left-panel{
+    height: calc(100vh - 150px);
+    padding: 12px 20px;
+    float: left;
+    background-color: #ffffff;
+    /deep/ .el-divider--horizontal {
+        display: block;
+        height: 1px;
+        width: 100%;
+        margin: 10px 0;
+    }
+    .tree-wrap{
+        height: calc(100% - 36px);
+    }
+}
+.right-panel{
+    min-height: calc(100vh - 150px);
+    padding-left: 15px;
+    float: left;
+    .filter-container {
+        font-size: 14px;
+        padding: 20px 28px 10px;
+    }
+    .table-info{
+        width: 96%;
+        height: 570px;
+        max-height: 630px;
+        margin-left: 2%;
+    }
+}
+/deep/ .el-table th {
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #308FE4;
+    /* background-color: white; */
+    color: #fff;
+}
+/deep/ .el-dialog__header {
+    background-color: #314055!important;
+    padding: 10px 20px;
+}
+.title{
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+}
+.el-divider--horizontal {
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 13px 0;
+}
+.pagination {
+    margin-top: 25px;
+    /deep/ .el-pagination {
+        display: flex;
+        justify-content: center;
+    }
+}
+.btns {
+    display: flex;
+    justify-content: flex-end;
+
+    /* 大屏幕 ：大于等于1200px*/
+    @media (min-width: 1200px) {
+
+    }
+
+    /*默认*/
+    @media screen and (min-width: 980px) and (max-width: 1199px) {
+
+    }
+
+    /* 平板电脑和小屏电脑之间的分辨率 */
+    @media screen and (min-width: 768px) and (max-width: 979px) {
+
+    }
+    button {
+        /*width: 100px;*/
+    }
+}
+.el-dialog__body {
+    padding: 30px 35px;
+}
+.grid-content{
+    height: 35px;
+    line-height: 35px;
+    padding-left: 5px;
+    float: right;
+    min-width: 145px;
+    text-align: end;
+}
+/deep/ .iconfont {
+    font-size: 20px!important;
+    cursor: pointer;
+}
+.tree-content{
+    height: calc(100% - 52px);
+    position: relative;
+    margin-top: 10px;
+}
+/*.form-inline{
+    height: 50px;
+}*/

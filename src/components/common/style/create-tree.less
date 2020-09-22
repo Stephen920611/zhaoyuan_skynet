@@ -1,0 +1,119 @@
+.tree-wrapper {
+    height: calc(~"100% - 52px");
+    /deep/ .search-node-inp {
+        width: 100%;
+        float: left;
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    .tree-wrap {
+        height: calc(~"100% - 41px");
+        clear: both;
+        overflow: auto;
+        font-size: 14px;
+    }
+    .tree-wrap-not-search {
+        height: calc(~"100% - 10px");
+    }
+    /deep/ .el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content {
+        background-color: #409EFF;
+        color: #fff;
+    }
+    .self-icon {
+        display: inline-block;
+        color: #777;
+        width: 15px;
+        height: 15px;
+        background-size: 15px 15px !important;
+        position: relative;
+        top: 2px;
+        margin-right: 5px;
+        &.org {
+            background: url("../../../assets/image/camera/org.svg") no-repeat;
+        }
+        &.ball_cam {
+            background: url("../../../assets/image/camera/ball_cam.svg") no-repeat;
+        }
+        &.gun_cam {
+            background: url("../../../assets/image/camera/gun_cam.svg") no-repeat;
+        }
+        &.gun_cam_on {
+            background: url("../../../assets/image/camera/gun_cam_on.svg") no-repeat;
+        }
+        &.gun_cam_online {
+            background: url("../../../assets/image/camera/gun_cam_online.svg") no-repeat;
+        }
+        &.gun_cam_offline {
+            background: url("../../../assets/image/camera/gun_cam_offline.svg") no-repeat;
+        }
+        &.gun_cam_abnormal {
+            background: url("../../../assets/image/camera/gun_cam_abnormal.svg") no-repeat;
+        }
+        &.ball_cam_on {
+            background: url("../../../assets/image/camera/ball_cam_on.svg") no-repeat;
+        }
+        &.ball_cam_online {
+            background: url("../../../assets/image/camera/ball_cam_online.svg") no-repeat;
+        }
+        &.ball_cam_offline {
+            background: url("../../../assets/image/camera/ball_cam_offline.svg") no-repeat;
+        }
+        &.ball_cam_abnormal {
+            background: url("../../../assets/image/camera/ball_cam_abnormal.svg") no-repeat;
+        }
+        &.plan_group_icon {
+            background: url("../../../assets/image/camera/plan_group_icon.svg") no-repeat;
+        }
+    }
+}
+.my-badge {
+    color: #fff;
+    background: #99a9bf;
+    padding: 3px 8px;
+    font-size: 12px;
+    line-height: 12px;
+    border-radius: 20px;
+    text-align: center;
+}
+.hide-badge{
+    display: none;
+}
+.custom-tree-node {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding-right: 8px;
+}
+
+.tree_menu {
+    position: fixed;
+    display: block;
+    z-index: 20000;
+    background-color: #fff;
+    padding: 5px 0;
+    border: 1px solid #ebeef5;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    ul li {
+        list-style: none;
+        margin: 0;
+        padding: 0 15px;
+        font-size: 14px;
+        line-height: 30px;
+        cursor: pointer;
+        &:hover {
+            background-color: #ebeef5
+        }
+        & > i {
+            margin-right: 5px;
+        }
+    }
+}

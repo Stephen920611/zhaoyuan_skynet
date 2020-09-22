@@ -1,0 +1,40 @@
+.tab-container{
+    height: 100%;
+    padding: 10px;
+    .btn-wrap{
+        .el-button-group{
+            width: 100%;
+            button{
+                width: 33.3333%;
+            }
+        }
+    }
+    .content{
+        height: calc(~"100% - 100px");
+        padding: 15px;
+        border: 1px solid #eee;
+        border-radius: 3px;
+        position: relative;
+        .title{
+            font-size: 15px;
+            margin: 5px 0 20px 0;
+        }
+        .camera-item{
+            margin-bottom: 10px;
+            border: 1px solid #eee;
+            border-radius: 3px;
+            padding: 8px 10px;
+            font-size: 15px;
+            .el-col{
+                height: 22px;
+                line-height: 20px;
+            }
+            &.active{
+                border-color: #58B4E9;
+                background-color:#FCFDFD ;
+            }
+        }
+    }
+
+
+}

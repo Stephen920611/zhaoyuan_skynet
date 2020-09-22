@@ -1,0 +1,211 @@
+.video-container {
+    height: calc(100vh - 60px);
+    padding: 5px;
+    position: relative;
+    .video-group {
+        height: 100%;
+    }
+    .tree-container {
+        height: calc(~"100% - 10px");
+    }
+    .tree-container-small {
+        height: calc(~"100% - 200px");
+    }
+    .tree-selector{
+        width: 100%;
+    }
+    .time-form {
+        padding: 20px 10px 0 10px;
+        .el-form-item {
+            margin-bottom: 10px;
+        }
+    }
+    .el-col {
+        height: 100%;
+    }
+    /deep/ .tree-tab {
+        height: 100%;
+        margin: 0 10px 0 0;
+        background: #FFF;
+        border: 1px solid #DCDFE6;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12), 0 0 6px 0 rgba(0, 0, 0, .04);
+        .el-tabs__header {
+            margin: 0;
+            border-bottom: none;
+            .el-tabs__nav-wrap {
+                width: 100%;
+            }
+        }
+        .el-tabs__content {
+            height: calc(~"100% - 39px");
+            padding: 8px;
+            .el-tab-pane {
+                height: 100%;
+            }
+        }
+        .el-tabs__nav {
+            width: 100%;
+            border: none;
+        }
+        .el-tabs__item {
+            width: calc(~"100% / 2");
+            text-align: center;
+            padding: 0 10px !important;
+        }
+    }
+    /deep/ .video-tab {
+        height: 100%;
+        .el-tabs__nav-scroll {
+            margin: 0;
+        }
+        .el-tabs__nav-wrap {
+            width: 100%;
+        }
+        .el-tabs__content {
+            height: calc(~"100% - 39px");
+            padding: 8px;
+            .el-tab-pane {
+                height: 100%;
+            }
+        }
+    }
+    //火狐使用
+    .tree-tab {
+        height: 100%;
+        margin: 0 10px 0 0;
+        background: #FFF;
+        border: 1px solid #DCDFE6;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12), 0 0 6px 0 rgba(0, 0, 0, .04);
+        .el-tabs__header {
+            margin: 0;
+            border-bottom: none;
+            .el-tabs__nav-wrap {
+                width: 100%;
+            }
+        }
+        .el-tabs__content {
+            height: calc(~"100% - 39px");
+            padding: 8px;
+            .el-tab-pane {
+                height: 100%;
+            }
+        }
+        .el-tabs__nav {
+            width: 100%;
+            border: none;
+        }
+    }
+    .video-tab {
+        height: 100%;
+        .el-tabs__nav-scroll {
+            margin: 0;
+        }
+        .el-tabs__nav-wrap {
+            width: 100%;
+        }
+        .el-tabs__content {
+            height: calc(~"100% - 39px");
+            padding: 8px;
+            .el-tab-pane {
+                height: 100%;
+            }
+        }
+    }
+
+    .tree-list-wrap {
+        .el-form-item {
+            margin-bottom: 5px;
+        }
+        .el-form-item__content{
+            width: calc(~"100% - 100px");
+        }
+
+    }
+    .tree-wrap {
+        height: calc(~"100% - 10px");
+        .search-node-inp {
+            width: 100%;
+            float: left;
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+        .tree-wrapper {
+            height: calc(~"100% - 42px");
+            clear: both;
+            overflow: auto;
+        }
+        .el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content {
+            background-color: #409EFF;
+            color: #fff;
+        }
+        .self-icon {
+            display: inline-block;
+            color: #777;
+            width: 15px;
+            height: 15px;
+            background-size: 15px 15px !important;
+            position: relative;
+            top: 2px;
+            margin-right: 5px;
+            &.org-icon {
+                background: url("../../../assets/image/camera/org.svg") no-repeat;
+            }
+            &.ball-cam-icon {
+                background: url("../../../assets/image/camera/ball_cam.svg") no-repeat;
+            }
+            &.gun-cam-icon {
+                background: url("../../../assets/image/camera/gun_cam.svg") no-repeat;
+            }
+            &.gun-cam-on-icon {
+                background: url("../../../assets/image/camera/gun_cam_on.svg") no-repeat;
+            }
+            &.gun-cam-online-icon {
+                background: url("../../../assets/image/camera/gun_cam_online.svg") no-repeat;
+            }
+            &.gun-cam-offline-icon {
+                background: url("../../../assets/image/camera/gun_cam_offline.svg") no-repeat;
+            }
+            &.gun-cam-abnormal-icon {
+                background: url("../../../assets/image/camera/gun_cam_abnormal.svg") no-repeat;
+            }
+            &.ball-cam-on-icon {
+                background: url("../../../assets/image/camera/ball_cam_on.svg") no-repeat;
+            }
+            &.ball-cam-online-icon {
+                background: url("../../../assets/image/camera/ball_cam_online.svg") no-repeat;
+            }
+            &.ball-cam-offline-icon {
+                background: url("../../../assets/image/camera/ball_cam_offline.svg") no-repeat;
+            }
+            &.ball-cam-abnormal-icon {
+                background: url("../../../assets/image/camera/ball_cam_abnormal.svg") no-repeat;
+            }
+            &.plan-group-icon {
+                background: url("../../../assets/image/camera/plan_group_icon.svg") no-repeat;
+            }
+        }
+    }
+    .drawer-wrapper {
+        .drawer-handle {
+            position: absolute;
+            right: 0;
+            top: calc(~"(100% - 95px) / 2");
+            width: 20px;
+            height: 95px;
+            border-radius: 6px 0 0 6px;
+            padding: 12px 8px;
+            text-align: center;
+            line-height: 0;
+            span {
+                writing-mode: vertical-rl;
+            }
+        }
+    }
+}
+
+/*右侧抽屉*/
+.rightPanel{
+    max-width: 350px !important;
+    padding: 10px 0;
+}
