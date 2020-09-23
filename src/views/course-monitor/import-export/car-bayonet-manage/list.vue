@@ -280,7 +280,7 @@
                 const boxHeight = this.$refs.container.$el.offsetHeight;
                 const topHeight = this.$refs.carInfo.$el.offsetHeight;
                 this.tabHeight = boxHeight - topHeight - 60 + 'px';
-                console.log(boxHeight,topHeight,"##");
+//                console.log(boxHeight,topHeight,"##");
             })
 
 

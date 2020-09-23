@@ -40,6 +40,7 @@ const courseMonitorRouter = {
                         title: 'cMOperationProcess',
                         // icon: 'handing-process',
                         isShowSlideBar: true,
+                        isShowTagsView: false,
                         fullPath:'/course-monitor/handling-process/operation-process/index'
                     },
                     children: [
@@ -54,6 +55,7 @@ const courseMonitorRouter = {
                                 activeMenu: '/course-monitor/handling-process/operation-process',
                                 noCache: false,
                                 isShowSlideBar: true,
+                                isShowTagsView: false,
                                 fullPath:'/course-monitor/handling-process/operation-process/index'
                             }
                         },

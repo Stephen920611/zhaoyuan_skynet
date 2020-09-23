@@ -204,7 +204,7 @@
                     this.ruleForm.companyEconomicType =  this.ruleForm.companyEconomicType+'';
                     this.ruleForm.chemicalId = [];
                     this.ruleForm.companyType = [];
-                    console.log(value.companyChemicalList,"value.companyChemicalList");
+//                    console.log(value.companyChemicalList,"value.companyChemicalList");
                     value.companyChemicalList.map(item=>{
                         this.ruleForm.chemicalId.push(item.chemicalId+'')
                     });

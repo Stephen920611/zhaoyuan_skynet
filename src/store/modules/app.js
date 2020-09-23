@@ -63,6 +63,9 @@ const mutations = {
     TOGGLE_SHOW_BREADCRUMB: (state, isShowBreadcrumb) => {
         state.isShowBreadcrumb = isShowBreadcrumb
     },
+    TOGGLE_SHOW_TAGS_VIEW: (state, isShowTagsView) => {
+        state.isShowTagsView = isShowTagsView
+    },
 }
 
 const actions = {
@@ -99,6 +102,10 @@ const actions = {
     //改变是否展示面包屑
     toggleShowBreadcrumb({commit}, {isShowBreadcrumb}) {
         commit('TOGGLE_SHOW_BREADCRUMB', isShowBreadcrumb)
+    },
+    //改变是否展示tagsView
+    toggleShowTagsView({commit}, {isShowTagsView}) {
+        commit('TOGGLE_SHOW_TAGS_VIEW', isShowTagsView)
     },
     
 }

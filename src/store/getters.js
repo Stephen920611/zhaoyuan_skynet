@@ -15,6 +15,7 @@ const getters = {
     errorLogs: state => state.errorLog.logs,
     sidebarData: state => state.app.sidebarData,
     hasSidebar: state => state.app.hasSidebar,
+    isShowTagsView: state => state.app.isShowTagsView,
     isShowBreadcrumb: state => state.app.isShowBreadcrumb,
     sidebarParents: state => state.app.sidebarParents,
     toggleMenuVisible: state => state.app.toggleMenuVisible,

@@ -1,6 +1,6 @@
 <template>
     <div :class="{'has-logo':showLogo}" class="head-nav-bar">
-        <logo v-if="showLogo"/>
+        <logo v-if="showLogo" ref="logoContent"/>
 
         <!-- <div class="avatar-wrapper">
                          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
@@ -275,10 +275,10 @@
             // 监听多余按钮的显示
             resizeUpOrDownBtn() {
                 const {dispatch} = this.$store
-                // 如果大于60的高度，说明菜单栏不止一行，需要让箭头显示
+                // 如果大于顶部的高度，说明菜单栏不止一行，需要让箭头显示
                 dispatch({
                     type: 'app/toggleMenuBtn',
-                    menuVisibleBtn: this.$refs.subMenuList.$el.offsetHeight > 60
+                    menuVisibleBtn: this.$refs.subMenuList.$el.offsetHeight > this.$refs.logoContent.$el.offsetHeight
                 })
             },
 

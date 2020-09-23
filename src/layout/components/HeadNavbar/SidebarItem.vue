@@ -123,9 +123,15 @@
              */
             menuChange(item, onlyOneChild) {
                 const {dispatch} = this.$store;
+                //是否展示面包屑
                 dispatch({
                     type: 'app/toggleShowBreadcrumb',
                     isShowBreadcrumb: !(item.meta && item.meta.hasOwnProperty('isShowBreadcrumb') && !item.meta.isShowBreadcrumb)
+                });
+                //是否展示tagsView
+                dispatch({
+                    type: 'app/toggleShowTagsView',
+                    isShowTagsView: !(item.meta && item.meta.hasOwnProperty('isShowTagsView') && !item.meta.isShowTagsView)
                 });
                 // 收起顶部标题（箭头变化）
                 this.toggleMenuItem()

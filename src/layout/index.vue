@@ -20,15 +20,15 @@
         <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside"/>
         <head-navbar/>
         <sidebar v-if="hasSidebar" class="sidebar-container"/>
-        <div :class="{hasTagsView:needTagsView}">
+        <div :class="{hasTagsView:isShowTagsView}">
             <div :class="{'fixed-header':fixedHeader}" class="navbar-container"
                  :style="!hasSidebar ? 'margin-left:0;width:100%' : null">
-                <!--<navbar/>-->
+                <navbar/>
                 <!-- tag切换 -->
-                <tags-view v-if="needTagsView"/>
+                <tags-view v-if="isShowTagsView"/>
             </div>
         </div>
-        <div id="main-container" v-scrollBar :class="['main-container', !hasSidebar ? 'margin-l-0' : 'mg-sideBar-width', isShowBreadcrumb ? 'hasBreadcrumb' : 'hasNoBreadcrumb']" >
+        <div id="main-container" v-scrollBar :class="['main-container', !hasSidebar ? 'margin-l-0' : 'mg-sideBar-width', (isShowBreadcrumb && isShowTagsView) ? 'haveBoth' : isShowBreadcrumb ? 'onlyHaveBreadcrumb' : isShowTagsView ?  'onlyHaveTagsView': 'haveNone']" >
             <app-main/>
             <right-panel v-if="showSettings" v-show="false">
                 <settings/>
@@ -63,6 +63,7 @@
         computed: {
             ...mapGetters([
                 'hasSidebar',
+                'isShowTagsView',
                 'isShowBreadcrumb',
                 'permission_routes',
             ]),
@@ -95,6 +96,8 @@
                     document.getElementById('main-container').scrollTop = 0;
                     //刷新界面或者点击浏览器回退按钮，侧边栏根据当前的路由来判断是否显示
                     this.updateSidebar();
+                    //刷新界面或者点击浏览器回退按钮，更新tagsView
+                    this.updateTagsView();
                 }
             },
         },
@@ -124,6 +127,17 @@
                     }
                 })
             },
+
+            //刷新界面或者点击浏览器回退按钮，更新tagsView
+            updateTagsView(){
+                const {dispatch} = this.$store;
+                //是否展示tagsView
+                dispatch({
+                    type: 'app/toggleShowTagsView',
+                    isShowTagsView: !(this.$route.meta && this.$route.meta.hasOwnProperty('isShowTagsView') && !this.$route.meta.isShowTagsView)
+                });
+            },
+
             //点击是否收起菜单栏
             handleClickOutside() {
                 this.$store.dispatch('app/closeSideBar', {withoutAnimation: false})
@@ -149,11 +163,19 @@
             }
         }
 
-        .hasBreadcrumb {
+        .onlyHaveBreadcrumb {
             margin-top: 110px !important;
             height: calc(100vh - 110px) !important;
         }
-        .hasNoBreadcrumb {
+        .onlyHaveTagsView {
+            margin-top: 94px !important;
+            height: calc(100vh - 94px) !important;
+        }
+        .haveBoth {
+            margin-top: 144px !important;
+            height: calc(100vh - 144px) !important;
+        }
+        .haveNone {
             margin-top: 60px !important;
             height: calc(100vh - 60px) !important;
         }

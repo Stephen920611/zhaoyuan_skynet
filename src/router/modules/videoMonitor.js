@@ -12,6 +12,7 @@ const videoMonitorRouter = {
         icon: 'video',
         breadcrumb: false,  //在面包屑中隐藏
         isShowSlideBar: false,
+        isShowTagsView: false,
         fullPath:'/video-monitor/index'
     },
     children: [
@@ -23,6 +24,7 @@ const videoMonitorRouter = {
                 title: 'videoMonitorIndex',
                 isShowSlideBar: false,
                 isShowBreadcrumb: false,
+                isShowTagsView: false,
                 fullPath:'/video-monitor/index'
             }
         }

@@ -70,7 +70,7 @@
 
                     //没有首页时
                     if (val.hasOwnProperty('name') && this.levelList.length > 0 && val.name === this.levelList[0].name) {
-                        console.log(val,'val');
+//                        console.log(val,'val');
                         dispatch({
                             type: 'app/updateSidebar', // 调用action
                             sidebarData: val.children, // 侧边栏的数据

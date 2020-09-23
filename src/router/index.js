@@ -38,7 +38,8 @@ import hazardInstallationsRouter from './modules/hazardInstallationsRouter'
     breadcrumb: false            如果设为false,该路由将在breadcrumb面包屑中隐藏（默认是true）
     activeMenu: '/example/list'  如果设置了路径，则侧边栏将突出高亮显示您设置的路径
     isShowSlideBar:true          是否需要显示侧边栏；设为true,该路由会显示侧边栏（默认是false）
-    isShowBreadcrumb:true          是否展示整个面包屑；设为true,会显示面包屑（默认是true）
+    isShowBreadcrumb:true        是否展示整个面包屑；设为true,会显示面包屑（默认是true）
+    isShowTagsView:true          是否展示tagsView；设为true,则会显示面包屑（默认是true）
     isNeedReWriteRedirect: true    是否需要重新动态生成redirect， 如果只有3级，那么第1级需要加属性，如果是4级，那么1、2级需要加属性， 0~(n-2) 级都需要， 只有确定的页面才不需要（结合权限控制来，因为权限控制会使得一些路由消失，所以需要动态配置）
     fullPath:'/dashboard'          fullPath，用来对应的控制权限显示，必须要有，而且一个模块都必须一致
   }
