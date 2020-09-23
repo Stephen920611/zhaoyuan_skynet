@@ -153,16 +153,17 @@
             initTags() {
                 const affixTags = this.affixTags = this.filterAffixTags(this.routes)
                 for (const tag of affixTags) {
-                    // Must have tag name
-                    if (tag.name) {
+                    // Must have tag name，或者meta里必须需要有isShowTagsView，且为true，默认为true
+                    if (tag.name && !(tag.meta.hasOwnProperty('isShowTagsView') && !tag.meta.isShowTagsView)) {
                         this.$store.dispatch('tagsView/addVisitedView', tag)
                     }
                 }
             },
             //添加tags标签
             addTags() {
-                const {name} = this.$route
-                if (name) {
+                const {name, meta} = this.$route
+                //是否添加标签
+                if (name && !(meta.hasOwnProperty('isShowTagsView') && !meta.isShowTagsView)) {
                     this.$store.dispatch('tagsView/addView', this.$route)
                 }
                 return false
