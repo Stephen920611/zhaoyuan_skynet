@@ -78,6 +78,10 @@
             basePath: {
                 type: String,
                 default: ''
+            },
+            activeMenu: {
+                type: String,
+                default: ''
             }
         },
         data() {
@@ -85,10 +89,11 @@
             // TODO: 用渲染功能重构
             this.onlyOneChild = null
             return {
-                clickMenu: {}
+                clickMenu: null,
             }
         },
-
+        mounted(){
+        },
         methods: {
             generateTitle,
             /**
@@ -124,14 +129,10 @@
              * @param onlyOneChild {Boolean} 是否含有子元素
              */
             menuChange(item, onlyOneChild) {
-
-                //TODO 未完成，不同模块之间互相独立
-                /*if(this.clickMenu.hasOwnProperty('name') && this.clickMenu.name !== item.name){
-                    console.log(1111);
-                }
-                this.clickMenu = item;*/
-
                 const {dispatch} = this.$store;
+
+                //根据业务需求，需要清空之前的tagViews
+                dispatch('tagsView/delAllViews', null, {root: true});
                 //是否展示面包屑
                 dispatch({
                     type: 'app/toggleShowBreadcrumb',

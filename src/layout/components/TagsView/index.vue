@@ -264,6 +264,7 @@
             openAllMenu(e) {
                 const self = this
                 const tags = this.$refs.tag
+                console.log(this.visitedViews,'this.visitedViews');
                 // 记录当前路由
                 for (const tag of this.visitedViews) {
                     if (tag.path === this.$route.path) {

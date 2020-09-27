@@ -10,7 +10,8 @@ const videoMonitorRouter = {
     meta: {
         title: 'videoMonitorModule',
         icon: 'video',
-        breadcrumb: false,  //在面包屑中隐藏
+        breadcrumb: false,  //在面包屑中隐藏+
+        noCache: true,
         isShowSlideBar: false,
         isShowTagsView: false,
         fullPath:'/video-monitor/index'
@@ -23,6 +24,7 @@ const videoMonitorRouter = {
             meta: {
                 title: 'videoMonitorIndex',
                 isShowSlideBar: false,
+                noCache: true,
                 isShowBreadcrumb: false,
                 isShowTagsView: false,
                 fullPath:'/video-monitor/index'
