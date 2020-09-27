@@ -5,18 +5,29 @@
 
         <div class="map">
             <div class="lt-btn-wrapper">
-                <drop-down name="区域选择" ref="dropDownMenu" :data="regions" :defaultValue="defaultSelectRegionCode"
-                           :isMultiSelect="false" @command="handRegionClick"></drop-down>
-                <drop-down name="点位工具" :data="drawBtnItems" :isSelect="false" @command="handleDraw"></drop-down>
+                <!--<drop-down name="区域选择" ref="dropDownMenu" :data="regions" :defaultValue="defaultSelectRegionCode" size="mini"
+                           :isMultiSelect="true" @command="handRegionClick"></drop-down>-->
+                <!--<drop-down name="热力图" :data="drawBtnItems" :isSelect="false" @command="handleDraw"></drop-down>-->
             </div>
-            <!--<div class="rt-btn-wrapper">
+            <div>
+
+            </div>
+            <div class="rt-btn-wrapper">
                 <switch-item ref="switchItem" :data="operateBtnItems" :defaultValue="defaultSelectSwitch"
                              :isMultiSelect="true" :isInterval="false" @selectItem="handleSwitch"></switch-item>
-            </div>-->
+            </div>
             <div class="map-wrapper">
                 <google-map-view ref="googleMap" @map="getMap" :lat="mapCenterLat" :lng="mapCenterLng"></google-map-view>
             </div>
+            <ul class="map-legend-container">
+               <li v-for="(item,idx) in mapLegendData" :key="idx">
+                   <!--<i :class="['icon iconfont ' + item.iconName]" title="查看"></i>-->
+                   <i class="el-icon-arrow-down el-icon--right"></i>
+                   <span>{{item.name}}</span>
+               </li>
+            </ul>
         </div>
+
         <right-panel ref="rightPanel">
             <right-drawer ref="rightDrawer" :region="regions" :map="map" :areaId="defaultSelectRegionCode.join(',')"></right-drawer>
         </right-panel>
@@ -80,7 +91,59 @@
                 map: null,
                 mapCenterLat:'37.6408324203',  //地图默认区域中心的经纬度,默认为龙口市
                 mapCenterLng:'120.5088065485',
-                regions: [],  //行政区域,
+                mapLegendData: [
+                    {
+                        name: "交通类警情",
+                        iconName: "iconqiyeziping"
+                    },
+                    {
+                        name: "群众求助",
+                        iconName: "iconqiyeziping"
+                    },
+                    {
+                        name: "火灾事故",
+                        iconName: "iconqiyeziping"
+                    },
+                    {
+                        name: "举报投诉",
+                        iconName: "iconqiyeziping"
+                    },
+                    {
+                        name: "固定点报警",
+                        iconName: "iconqiyeziping"
+                    },
+                    {
+                        name: "刑事警情",
+                        iconName: "iconqiyeziping"
+                    },
+                    {
+                        name: "治安警情",
+                        iconName: "iconqiyeziping"
+                    },
+                    {
+                        name: "纠纷",
+                        iconName: "iconqiyeziping"
+                    },
+                    {
+                        name: "事件",
+                        iconName: "iconqiyeziping"
+                    },
+                    {
+                        name: "应急联动事件",
+                        iconName: "iconqiyeziping"
+                    },
+                    {
+                        name: "其他警情",
+                        iconName: "iconqiyeziping"
+                    },
+                    {
+                        name: "无效警情",
+                        iconName: "iconqiyeziping"
+                    },
+                ],
+                regions: [
+                    '111'
+                ],  //行政区域,
                 defaultSelectRegionCode: [],  //默认选中的行政区编码
                 defaultSelectDrawCode: [],  //默认选中的点位工具编码
                 regionCameraMarkersHash: new utility.hashTable(), //存储某区域下的所有摄像机，key为id，value为摄像机marker数组
@@ -799,7 +862,9 @@
             //获取烟台市的行政区域
             getAllRegions() {
                 this.defaultSelectRegionCode = [];
-                queryAreaList({parent:'370600'}).then(res=>{
+//                queryAreaList({parent:'370600'}).then(res=>{
+                queryAreaList({}).then(res=>{
+                    console.log(res,'res');
                     this.regions = res.data;
                     let areaId = "";
                     this.regions.forEach(item => {

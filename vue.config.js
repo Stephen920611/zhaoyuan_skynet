@@ -40,7 +40,7 @@ module.exports = {
         before: require('./mock/mock-server.js')
     },
     css: {
-        loaderOptions: {
+       /* loaderOptions: {
             postcss: {
                 plugins: [
                     require("postcss-px-to-viewport")({
@@ -60,7 +60,7 @@ module.exports = {
                     })
                 ]
             }
-        }
+        }*/
     },
     configureWebpack: {
         // provide the app's title in webpack's name field, so that

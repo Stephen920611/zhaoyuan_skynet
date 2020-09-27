@@ -8,75 +8,77 @@
               isMultiSelect(是否是多选，true为默认多选，false默认单选)
 -->
 <template id="dropdownTemp">
-  <el-dropdown
-    split-button
-    :size="size?size:'medium'"
-    :type="type?type:'default'"
-    :trigger="trigger?trigger:'click'"
-    @command="handleCommandFunc">
-    {{name}}
-    <el-dropdown-menu slot="dropdown">
-       <div v-for="(item,index) in data" :key="index">
-         <el-dropdown-item :command="item.id" :class="{'operate-choose':defaultSelectArr.indexOf(item.id)>-1}">
-           <i :class="item.icon?item.icon:''"></i>
-           {{item.des}}</el-dropdown-item>
-       </div>
-    </el-dropdown-menu>
-  </el-dropdown>
+    <el-dropdown
+            :hide-on-click="false"
+            split-button
+            :size="size?size:'medium'"
+            :type="type?type:'default'"
+            :trigger="trigger?trigger:'click'"
+            @command="handleCommandFunc">
+        {{name}}
+        <el-dropdown-menu slot="dropdown" class="dropdown-custom">
+            <div v-for="(item,index) in data" :key="index">
+                <el-dropdown-item :command="item.id" :class="{'operate-choose':defaultSelectArr.indexOf(item.id)>-1}">
+                    <i :class="item.icon?item.icon:''"></i>
+                    {{item.des}}
+                </el-dropdown-item>
+            </div>
+        </el-dropdown-menu>
+    </el-dropdown>
 </template>
 <script>
-  export default {
+    export default {
 //    props:["name","data","defaultValue","isMultiSelect","type","trigger","size"],
-    props:{
-      name:String,
-      data:Array,
-      defaultValue:{
-        type: Array,
-        default: function() {
-            return []
-        }
-      },
-      isSelect:{
-        type: Boolean,
-        default: true
-      },
-      isMultiSelect:{
-        type: Boolean,
-        default: false
-      },
-      type:String,
-      trigger:String,
-      size:String
-    },
-    data(){
-      return{
-        defaultSelectArr:this.defaultValue,  //若是空数组，表示不选中任意项； 若数组中始终为一个，则是单选；若是数组中有多个，则是多选
-      }
-    },
-      watch:{
-        'defaultValue':{
-            handler(value){
-                this.defaultSelectArr = this.defaultValue;
+        props: {
+            name: String,
+            data: Array,
+            defaultValue: {
+                type: Array,
+                default: function () {
+                    return []
+                }
+            },
+            isSelect: {
+                type: Boolean,
+                default: true
+            },
+            isMultiSelect: {
+                type: Boolean,
+                default: false
+            },
+            type: String,
+            trigger: String,
+            size: String
+        },
+        data() {
+            return {
+                defaultSelectArr: this.defaultValue,  //若是空数组，表示不选中任意项； 若数组中始终为一个，则是单选；若是数组中有多个，则是多选
+            }
+        },
+        watch: {
+            'defaultValue': {
+                handler(value) {
+                    this.defaultSelectArr = this.defaultValue;
+                }
+            }
+        },
+        methods: {
+            handleCommandFunc(value) {
+                if (this.isSelect) {  //若是支持选中
+                    if (!this.isMultiSelect) {   //单选
+                        this.defaultSelectArr = [];
+                    }
+                    const index = this.defaultSelectArr.indexOf(value);
+                    if (index > -1) {
+                        this.defaultSelectArr.splice(index, 1)
+                    } else {
+                        this.defaultSelectArr.push(value);
+                    }
+                }
+                this.$emit("command", value);
             }
         }
-      },
-    methods:{
-      handleCommandFunc(value){
-          if(this.isSelect){  //若是支持选中
-            if (!this.isMultiSelect) {   //单选
-              this.defaultSelectArr = [];
-            }
-            const index = this.defaultSelectArr.indexOf(value);
-            if (index > -1) {
-              this.defaultSelectArr.splice(index, 1)
-            } else {
-              this.defaultSelectArr.push(value);
-            }
-          }
-          this.$emit("command", value);
-      }
     }
-  }
 </script>
 <style lang="less" scoped>
     @import "../style/style.dropdownMenu.less";

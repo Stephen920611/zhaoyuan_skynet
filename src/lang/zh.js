@@ -3,7 +3,7 @@ export default {
         dashboard: '首页',
         /*-------------------- 案事件 -------------------*/
         lawCaseModule: '案事件',
-        lawCaseHomeIndex: '首页',
+        lawCaseHomeIndex: '案事件首页',
         lawCaseMapIndex: '地图研判',
         
         

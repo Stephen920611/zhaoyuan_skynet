@@ -67,7 +67,7 @@
         /*margin-top: 84px;*/
         min-height: calc(100vh - 144px);
         width: 100%;
-        /*height: 100%;*/
+        height: 100%;
         position: relative;
         overflow: hidden;
     }

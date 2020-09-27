@@ -10,6 +10,7 @@ const lawCaseRouter = {
     meta: {
         title: 'lawCaseModule',
         icon: 'statistic',
+        isShowBreadcrumb: false,
         fullPath:'/law-case'
     },
     children: [
@@ -21,7 +22,8 @@ const lawCaseRouter = {
             meta: {
                 title: '',
                 icon: 'statistic',
-                isShowSlideBar: false,
+                isShowSlideBar: true,
+                isShowBreadcrumb: false,
                 activeMenu: '/law-case/home',
                 fullPath:'/law-case/home/index'
             },
@@ -33,7 +35,8 @@ const lawCaseRouter = {
                     meta: {
                         title: 'lawCaseHomeIndex',
                         icon: 'list',
-                        isShowSlideBar: false,
+                        isShowSlideBar: true,
+                        isShowBreadcrumb: false,
                         fullPath:'/law-case/home/index'
                     }
                 }
@@ -48,7 +51,8 @@ const lawCaseRouter = {
                 title: '',
                 icon: 'statistic',
                 activeMenu: '/law-case/map',
-                isShowSlideBar: false,
+                isShowSlideBar: true,
+                isShowBreadcrumb: false,
                 fullPath:'/law-case/map'
             },
             children: [
@@ -59,7 +63,8 @@ const lawCaseRouter = {
                     meta: {
                         title: 'lawCaseMapIndex',
                         icon: 'list',
-                        isShowSlideBar: false,
+                        isShowSlideBar: true,
+                        isShowBreadcrumb: false,
                         fullPath:'/law-case/map'
                     }
                 }
