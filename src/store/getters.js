@@ -20,6 +20,7 @@ const getters = {
     sidebarParents: state => state.app.sidebarParents,
     toggleMenuVisible: state => state.app.toggleMenuVisible,
     menuVisibleBtn: state => state.app.menuVisibleBtn,
+    clickMenuParent: state => state.app.clickMenuParent,
     resizeHandlerVisible: state => state.app.resizeHandlerVisible,
     openWaybillDialog: state => state.map.openWaybillDialog,
     openDialogOfCar: state => state.map.openDialogOfCar,

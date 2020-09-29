@@ -15,6 +15,9 @@ const state = {
     isShowBreadcrumb: true, //是否展示面包屑
     isShowTagsView: true,   //是否展示tagsView
     sidebarParents: null, // 点击的顶部标题的数据
+    clickMenuParent: {
+    
+    },//当前点击的总菜单
     toggleMenuVisible: false,//默认显示单行菜单
     menuVisibleBtn: null,// 展开隐藏多行菜单按钮的显示与隐藏
     resizeHandlerVisible: true,// 监听屏幕变化的标志
@@ -60,6 +63,10 @@ const mutations = {
     TOGGLE_RESIZE_BTN: (state, resizeHandlerVisible) => {
         state.resizeHandlerVisible = resizeHandlerVisible
     },
+    //更改当前点击的总菜单
+    SET_CLICK_MENU_PARENT: (state, clickMenuParent) => {
+        state.clickMenuParent = clickMenuParent
+    },
     TOGGLE_SHOW_BREADCRUMB: (state, isShowBreadcrumb) => {
         state.isShowBreadcrumb = isShowBreadcrumb
     },
@@ -94,6 +101,10 @@ const actions = {
     //判断顶部导航多行按钮的显示与隐藏
     toggleMenuBtn({commit}, {_, menuVisibleBtn}) {
         commit('TOGGLE_MENU_BTN', menuVisibleBtn)
+    },
+    //判断顶部导航多行按钮的显示与隐藏
+    setClickMenuParent({commit}, {_, clickMenuParent}) {
+        commit('SET_CLICK_MENU_PARENT', clickMenuParent)
     },
     //监听屏幕的变化
     toggleResizeBtn({commit}, {resizeHandlerVisible}) {

@@ -34,7 +34,7 @@ const evaluateAnalysisRouter = {
                     name: 'EAEnterpriseSelfAssessmentIndex',
                     hidden: true,
                     meta: {
-                        title: '',
+                        title: 'eAEnterpriseSelfAssessmentIndex',
                         icon: 'enterprise-self',
                         activeMenu: '/evaluate-analysis/enterprise-self-assessment',
                         noCache: true,

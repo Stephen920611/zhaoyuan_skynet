@@ -53,6 +53,7 @@
 </template>
 
 <script>
+    import {mapGetters} from 'vuex'
     import path from 'path'
     import {generateTitle} from '@/utils/i18n'
     import {isExternal} from '@/utils/validate'
@@ -84,13 +85,15 @@
                 default: ''
             }
         },
+        computed: {
+            ...mapGetters([
+                'clickMenuParent',
+            ])
+        },
         data() {
             // To fix https://github.com/PanJiaChen/vue-admin-template/issues/237
             // TODO: 用渲染功能重构
             this.onlyOneChild = null
-            return {
-                clickMenu: null,
-            }
         },
         mounted(){
         },
@@ -130,9 +133,15 @@
              */
             menuChange(item, onlyOneChild) {
                 const {dispatch} = this.$store;
-
-                //根据业务需求，需要清空之前的tagViews
-                dispatch('tagsView/delAllViews', null, {root: true});
+                //如果點擊的還是當前的，就不需要更改了，也不需要清空。
+                if(this.clickMenuParent.name !== item.name) {
+                    dispatch({
+                        type: 'app/setClickMenuParent',
+                        clickMenuParent: item
+                    });
+                    //根据业务需求，需要清空之前的tagViews
+                    dispatch('tagsView/delAllViews', null, {root: true});
+                }
                 //是否展示面包屑
                 dispatch({
                     type: 'app/toggleShowBreadcrumb',
