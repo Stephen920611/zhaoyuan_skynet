@@ -93,7 +93,10 @@
         data() {
             // To fix https://github.com/PanJiaChen/vue-admin-template/issues/237
             // TODO: 用渲染功能重构
-            this.onlyOneChild = null
+            this.onlyOneChild = null;
+            return {
+
+            }
         },
         mounted(){
         },
